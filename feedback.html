@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Finance, Expense Tracker, Budget Management" />
+  <meta name="description" content="FinTrackr - Your personal finance tracking solution" />
+  <meta name="author" content="Soham Manjrekar" />
+  <title>FinTrackr - Feedback</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4c5df1;
+      --primary-dark: #3a47cc;
+      --secondary-color: #45c7a7;
+      --secondary-dark: #36a88b;
+      --accent-color: #ff7246;
+      --light-bg: #f6f9ff;
+      --dark-text: #2b3054;
+      --medium-text: #4e5a8a;
+      --light-text: #8792af;
+    }
+    
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .content-wrapper {
+      flex: 1;
+    }
+    
+    .header_section {
+      background-color: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feedback-hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      padding: 70px 0;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    
+    .feedback-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 1;
+    }
+    
+    .feedback-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .feedback-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .feedback-hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .feedback-section {
+      padding: 80px 0;
+      background-color: var(--light-bg);
+    }
+    
+    .feedback-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(76, 93, 241, 0.1);
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      border-left: 5px solid var(--secondary-color);
+    }
+    
+    .feedback-card h2 {
+      color: var(--dark-text);
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .feedback-card p {
+      color: var(--medium-text);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      color: var(--dark-text);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    
+    .form-control {
+      height: 50px;
+      border-radius: 8px;
+      border: 1px solid #e1e5ef;
+      padding: 10px 15px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(76, 93, 241, 0.25);
+    }
+    
+    textarea.form-control {
+      height: 150px;
+      resize: none;
+    }
+    
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin-bottom: 25px;
+    }
+    
+    .star-rating input {
+      display: none;
+    }
+    
+    .star-rating label {
+      cursor: pointer;
+      font-size: 30px;
+      color: #ddd;
+      margin: 0 5px;
+      transition: color 0.2s;
+    }
+    
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label {
+      color: #ffc107;
+    }
+    
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+    
+    .feature-checkbox {
+      display: none;
+    }
+    
+    .feature-label {
+      display: inline-block;
+      background-color: var(--light-bg);
+      color: var(--medium-text);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-checkbox:checked + .feature-label {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(76, 93, 241, 0.15);
+    }
+    
+    .testimonials {
+      margin-top: 80px;
+    }
+    
+    .testimonials h2 {
+      color: var(--dark-text);
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .testimonial-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(76, 93, 241, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(76, 93, 241, 0.15);
+    }
+    
+    .quote-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: var(--primary-color);
+      opacity: 0.2;
+    }
+    
+    .testimonial-text {
+      color: var(--medium-text);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    .testimonial-rating {
+      color: #ffc107;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-user {
+      display: flex;
+      align-items: center;
+    }
+    
+    .testimonial-user img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+    
+    .user-info h5 {
+      color: var(--dark-text);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .user-info p {
+      color: var(--light-text);
+      margin: 0;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 992px) {
+      .feedback-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .feedback-card {
+        padding: 30px;
+      }
+      
+      .testimonial-card {
+        padding: 25px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .feedback-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .features-list {
+        justify-content: center;
+      }
+      
+      .star-rating {
+        justify-content: center;
+      }
+      
+      .quote_btn-container {
+        margin-top: 15px;
+      }
+      
+      .quote_btn-container a {
+        font-size: 13px;
+      }
+      
+      .quote_btn-container a img {
+        width: 18px;
+        margin-right: 5px;
+      }
+      
+      .hero_area {
+        padding-bottom: 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .feedback-hero {
+        padding: 50px 0;
+      }
+      
+      .feedback-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .feedback-section {
+        padding: 40px 0;
+      }
+      
+      .feedback-card {
+        padding: 20px;
+        margin: 0 10px;
+      }
+      
+      .form-control {
+        height: 45px;
+        font-size: 14px;
+      }
+      
+      .testimonial-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .star-rating label {
+        font-size: 22px;
+        margin: 0 3px;
+      }
+      
+      .feature-label {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      
+      .testimonial-user img {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .user-info h5 {
+        font-size: 14px;
+      }
+      
+      .user-info p {
+        font-size: 12px;
+      }
+      
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      
+      .custom_nav-container .navbar-brand {
+        margin-right: 0;
+      }
+      
+      .info_section {
+        padding: 30px 0;
+      }
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(76, 93, 241, 0.2);
+    }
+    
+    .navbar-brand span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 1px 1px 2px rgba(76, 93, 241, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="FinTrackr Logo">
+            <span>FinTrackr</span>
+          </a>
+          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Application.html">Expense Tracker</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="feedback.html">Feedback <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="authLink" href="Login.html">Login</a>
+                </li>
+              </ul>
+            </div>
+            <div class="quote_btn-container d-flex justify-content-center">
+              <a href="mailto:pdivy292@gmail.com">
+                <img src="images/envelope.png" alt="Email">
+                <span>pdivy292@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- Feedback Hero Section -->
+    <section class="feedback-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center feedback-hero-content">
+            <h1>Share Your Feedback</h1>
+            <p>Your thoughts help us improve FinTrackr and create a better experience for everyone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Feedback Form Section -->
+    <section class="feedback-section">
+      <div class="container">
+        <div class="feedback-card">
+          <h2>How Are We Doing?</h2>
+          <p>Please take a moment to let us know about your experience with FinTrackr.</p>
+          
+          <form action="submit_feedback.php" method="post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>How would you rate your overall experience?</label>
+              <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Which features do you use most? (Select all that apply)</label>
+              <div class="features-list">
+                <input type="checkbox" id="feature1" name="features[]" value="expense_tracking" class="feature-checkbox">
+                <label for="feature1" class="feature-label">Expense Tracking</label>
+                
+                <input type="checkbox" id="feature2" name="features[]" value="budget_planning" class="feature-checkbox">
+                <label for="feature2" class="feature-label">Budget Planning</label>
+                
+                <input type="checkbox" id="feature3" name="features[]" value="financial_reports" class="feature-checkbox">
+                <label for="feature3" class="feature-label">Financial Reports</label>
+                
+                <input type="checkbox" id="feature4" name="features[]" value="goal_setting" class="feature-checkbox">
+                <label for="feature4" class="feature-label">Goal Setting</label>
+                
+                <input type="checkbox" id="feature5" name="features[]" value="category_management" class="feature-checkbox">
+                <label for="feature5" class="feature-label">Category Management</label>
+                
+                <input type="checkbox" id="feature6" name="features[]" value="bill_reminders" class="feature-checkbox">
+                <label for="feature6" class="feature-label">Bill Reminders</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="improvements">What could we improve?</label>
+              <textarea class="form-control" id="improvements" name="improvements" rows="5" placeholder="Please share your suggestions for improvement"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="features">Is there any feature you'd like us to add?</label>
+              <textarea class="form-control" id="features" name="new_features" rows="3" placeholder="Tell us about features you'd like to see"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="feedback">Additional Comments</label>
+              <textarea class="form-control" id="feedback" name="feedback" rows="5" placeholder="Any other thoughts or feedback you'd like to share"></textarea>
+            </div>
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit Feedback</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+          <div class="container">
+            <h2>What Users Are Saying</h2>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <i class="fas fa-quote-right quote-icon"></i>
+                  <p class="testimonial-text">FinTrackr has completely changed how I manage my finances. The intuitive interface makes tracking expenses so simple!</p>
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="User">
+                    <div class="user-info">
+                      <h5>Priya Sharma</h5>
+                      <p>Business Owner</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <i class="fas fa-quote-right quote-icon"></i>
+                  <p class="testimonial-text">The budget planning feature is excellent! I can now keep track of my spending habits and save more effectively.</p>
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="User">
+                    <div class="user-info">
+                      <h5>Rahul Patel</h5>
+                      <p>Software Engineer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="testimonial-card">
+                  <i class="fas fa-quote-right quote-icon"></i>
+                  <p class="testimonial-text">I've tried many expense trackers, but FinTrackr stands out with its clean design and comprehensive reports. Highly recommended!</p>
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <div class="testimonial-user">
+                    <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="User">
+                    <div class="user-info">
+                      <h5>Anita Desai</h5>
+                      <p>Financial Analyst</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="info_section layout_padding">
+      <div class="container">
+        <div class="info_social">
+          <div>
+            <a href="#">
+              <img src="images/fb.png" alt="Facebook">
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="images/twitter.png" alt="Twitter">
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="images/insta.png" alt="Instagram">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved By
+      <a href="index.html">FinTrackr</a>
+    </p>
+  </section>
+  
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.logged_in) {
+            // If logged in, update the auth link to "Logout"
+            const authLink = document.getElementById('authLink');
+            authLink.textContent = 'Logout';
+            authLink.href = 'logout.php';
+          }
+        })
+        .catch(error => {
+          console.error('Authentication check failed:', error);
+        });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Finance, Expense Tracker, Budget Management" />
+  <meta name="description" content="FinTrackr - Your personal finance tracking solution" />
+  <meta name="author" content="Soham Manjrekar" />
+  <title>FinTrackr - Contact Us</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4c5df1;
+      --primary-dark: #3a47cc;
+      --secondary-color: #45c7a7;
+      --secondary-dark: #36a88b;
+      --accent-color: #ff7246;
+      --light-bg: #f6f9ff;
+      --dark-text: #2b3054;
+      --medium-text: #4e5a8a;
+      --light-text: #8792af;
+    }
+    
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .content-wrapper {
+      flex: 1;
+    }
+    
+    .header_section {
+      background-color: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      padding: 70px 0;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    
+    .contact-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 1;
+    }
+    
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .contact-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .contact-hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .contact-section {
+      padding: 80px 0;
+      background-color: var(--light-bg);
+    }
+    
+    .contact-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(76, 93, 241, 0.1);
+      padding: 40px;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    
+    .contact-info-card {
+      border-left: 5px solid var(--primary-color);
+    }
+    
+    .contact-form-card {
+      border-left: 5px solid var(--secondary-color);
+    }
+    
+    .contact-card h2 {
+      color: var(--dark-text);
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--light-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: var(--primary-color);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .contact-text h5 {
+      color: var(--dark-text);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .contact-text p, .contact-text a {
+      color: var(--medium-text);
+      margin: 0;
+      line-height: 1.6;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-text a:hover {
+      color: var(--primary-color);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--light-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      height: 50px;
+      border-radius: 8px;
+      border: 1px solid #e1e5ef;
+      padding: 10px 15px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(76, 93, 241, 0.25);
+    }
+    
+    textarea.form-control {
+      height: 150px;
+      resize: none;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(76, 93, 241, 0.15);
+    }
+    
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(76, 93, 241, 0.1);
+      height: 450px;
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    @media (max-width: 992px) {
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .contact-card {
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+      
+      .map-container {
+        height: 350px;
+        margin-top: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .contact-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+      
+      .contact-section {
+        padding: 60px 0;
+      }
+      
+      .contact-card {
+        padding: 25px;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+      
+      .social-links {
+        gap: 10px;
+      }
+      
+      .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .contact-hero {
+        padding: 50px 0;
+      }
+      
+      .contact-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .contact-section {
+        padding: 40px 0;
+      }
+      
+      .contact-card {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .contact-info-item {
+        margin-bottom: 20px;
+      }
+      
+      .map-container {
+        height: 250px;
+        margin-top: 20px;
+      }
+      
+      .form-control {
+        height: 45px;
+        font-size: 14px;
+      }
+      
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      
+      .custom_nav-container .navbar-brand {
+        margin-right: 0;
+      }
+      
+      .info_section {
+        padding: 30px 0;
+      }
+      
+      textarea.form-control {
+        height: 120px;
+      }
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(76, 93, 241, 0.2);
+    }
+    
+    .navbar-brand span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 1px 1px 2px rgba(76, 93, 241, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="FinTrackr Logo">
+            <span>FinTrackr</span>
+          </a>
+          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="contact.html">Contact us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Application.html">Expense Tracker</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="authLink" href="Login.html">Login</a>
+                </li>
+              </ul>
+            </div>
+            <div class="quote_btn-container d-flex justify-content-center">
+              <a href="mailto:pdivy292@gmail.com">
+                <img src="images/envelope.png" alt="Email">
+                <span>pdivy292@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+  
+  <!-- Contact Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center contact-hero-content">
+          <h1>Get In Touch</h1>
+          <p>We'd love to hear from you! Reach out with your questions, feedback, or suggestions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <div class="contact-card contact-info-card">
+            <h2>Contact Information</h2>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Our Office</h5>
+                <p>123 Finance Street, Tech Park</p>
+                <p>Ahmedabad, Gujarat 380015, India</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Our Team</h5>
+                <p>Patel Divyakumar - Team Lead</p>
+                <p>Vaibhavi Jantralwala - UI/UX Designer</p>
+                <p>Kirti Rana - Backend Developer</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Email</h5>
+                <p><a href="mailto:pdivy292@gmail.com">pdivy292@gmail.com</a></p>
+                <p><a href="mailto:support@fintrackr.com">support@fintrackr.com</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h5>Working Hours</h5>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 10:00 AM - 2:00 PM</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="contact-card contact-form-card">
+            <h2>Send Us A Message</h2>
+            <form action="contact_submit.php" method="post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Map -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.70717817724!2d72.41493474921241!3d23.020497772518272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1645597945337!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="info_social">
+        <div>
+          <a href="#">
+            <img src="images/fb.png" alt="Facebook">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="images/linkedin.png" alt="LinkedIn">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="images/insta.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved By
+      <a href="index.html">FinTrackr</a>
+    </p>
+  </section>
+  
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.logged_in) {
+            // If logged in, update the auth link to "Logout"
+            const authLink = document.getElementById('authLink');
+            authLink.textContent = 'Logout';
+            authLink.href = 'logout.php';
+          }
+        })
+        .catch(error => {
+          console.error('Authentication check failed:', error);
+        });
+    });
+  </script>
+</body>
+</html>

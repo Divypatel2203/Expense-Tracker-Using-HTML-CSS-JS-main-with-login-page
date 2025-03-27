@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Finance, Expense Tracker, Budget Management" />
+  <meta name="description" content="FinTrackr - Your personal finance tracking solution" />
+  <meta name="author" content="Soham Manjrekar" />
+  <title>FinTrackr - Login</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4c5df1;
+      --primary-dark: #3a47cc;
+      --secondary-color: #45c7a7;
+      --secondary-dark: #36a88b;
+      --accent-color: #ff7246;
+      --light-bg: #f6f9ff;
+      --dark-text: #2b3054;
+      --medium-text: #4e5a8a;
+      --light-text: #8792af;
+    }
+    
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--light-bg);
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .content-wrapper {
+      flex: 1;
+    }
+    
+    .login-section {
+      padding: 80px 0;
+    }
+    
+    .login-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(76, 93, 241, 0.1);
+      padding: 40px;
+      max-width: 500px;
+      margin: 0 auto;
+      border-top: 5px solid var(--primary-color);
+    }
+    
+    .login-card h1 {
+      color: var(--dark-text);
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .login-card p {
+      color: var(--medium-text);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      color: var(--dark-text);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    
+    .form-control {
+      height: 50px;
+      border-radius: 8px;
+      border: 1px solid #e1e5ef;
+      padding: 10px 15px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(76, 93, 241, 0.25);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(76, 93, 241, 0.15);
+    }
+    
+    .register-link {
+      text-align: center;
+      margin-top: 25px;
+      color: var(--medium-text);
+    }
+    
+    .register-link a {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .register-link a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    .footer {
+      background-color: white;
+      padding: 15px 0;
+      color: var(--medium-text);
+      text-align: center;
+      border-top: 1px solid #e9ecef;
+    }
+    
+    .footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .footer a:hover {
+      color: var(--primary-dark);
+    }
+    
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    
+    .remember-me {
+      display: flex;
+      align-items: center;
+    }
+    
+    .remember-me input {
+      margin-right: 8px;
+    }
+    
+    .forgot-password {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    
+    .forgot-password:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .login-section {
+        padding: 60px 0;
+      }
+      
+      .login-card {
+        padding: 30px;
+        margin: 0 20px;
+      }
+      
+      .login-card h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .login-section {
+        padding: 40px 0;
+      }
+      
+      .login-card {
+        padding: 25px;
+      }
+      
+      .login-card h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      
+      .form-control {
+        height: 45px;
+        font-size: 14px;
+      }
+      
+      .login-options {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .remember-me {
+        margin-bottom: 10px;
+      }
+      
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(76, 93, 241, 0.2);
+    }
+    
+    .navbar-brand span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 1px 1px 2px rgba(76, 93, 241, 0.1);
+    }
+  </style>
+  </head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="FinTrackr Logo">
+            <span>FinTrackr</span>
+          </a>
+          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Application.html">Expense Tracker</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="Login.html">Login <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="quote_btn-container d-flex justify-content-center">
+              <a href="mailto:pdivy292@gmail.com">
+                <img src="images/envelope.png" alt="Email">
+                <span>pdivy292@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <div class="content-wrapper">
+    <section class="login-section">
+      <div class="container">
+        <div class="login-card">
+          <h1>Welcome Back</h1>
+          <p>Log in to your FinTrackr account</p>
+          <form action="login_process.php" method="post">
+            <div class="form-group">
+              <label for="username">Username or Email</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username or email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="login-options">
+              <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+              </div>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Log In</button>
+            <div class="register-link">
+              Don't have an account? <a href="Register.html">Sign up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 All Rights Reserved By <a href="index.html">FinTrackr</a></p>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    // Show status message
+    function showMessage(type, message) {
+      const statusMessage = document.getElementById('statusMessage');
+      statusMessage.className = `alert alert-${type}`;
+      statusMessage.textContent = message;
+      statusMessage.classList.remove('d-none');
+      
+      // Automatically hide the message after 5 seconds
+      setTimeout(() => {
+        statusMessage.classList.add('d-none');
+      }, 5000);
+    }
+    
+    // Add loading spinner to button
+    function setButtonLoading(button, isLoading) {
+      if (isLoading) {
+        button.innerHTML = `<span class="spinner"></span> Processing...`;
+        button.disabled = true;
+      } else {
+        if (button.id === 'loginBtn') {
+          button.innerHTML = `<i class="fas fa-sign-in-alt mr-2"></i>Login`;
+        } else {
+          button.innerHTML = `<i class="fas fa-user-plus mr-2"></i>Create Account`;
+        }
+        button.disabled = false;
+      }
+    }
+    
+    // Login form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const loginBtn = document.getElementById('loginBtn');
+      const loginAlert = document.getElementById('loginAlert');
+      
+      // Show loading state
+      loginBtn.innerHTML = '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> Logging in...';
+      loginBtn.disabled = true;
+      
+      // Clear previous alerts
+      loginAlert.classList.add('d-none');
+      
+      const formData = new FormData(this);
+      
+      fetch('user_auth.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Success message
+          loginAlert.innerHTML = '<i class="fas fa-check-circle mr-2"></i>' + data.message;
+          loginAlert.classList.remove('d-none', 'alert-danger');
+          loginAlert.classList.add('alert-success');
+          
+          // Redirect after successful login
+          setTimeout(() => {
+            window.location.href = 'Application.html';
+          }, 1000);
+        } else {
+          // Error message
+          loginAlert.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>' + data.message;
+          loginAlert.classList.remove('d-none', 'alert-success');
+          loginAlert.classList.add('alert-danger');
+          
+          // Reset button
+          loginBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Login';
+          loginBtn.disabled = false;
+        }
+      })
+      .catch(error => {
+        // Network or other error
+        loginAlert.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>An error occurred. Please try again.';
+        loginAlert.classList.remove('d-none', 'alert-success');
+        loginAlert.classList.add('alert-danger');
+        
+        // Reset button
+        loginBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Login';
+        loginBtn.disabled = false;
+        
+        console.error('Login error:', error);
+      });
+    });
+    
+    // Signup form submission
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Check if passwords match
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        showMessage('danger', 'Passwords do not match.');
+        return;
+      }
+      
+      const signupBtn = document.getElementById('signupBtn');
+      setButtonLoading(signupBtn, true);
+      
+      const formData = new FormData(this);
+      
+      fetch('user_auth.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        setButtonLoading(signupBtn, false);
+        
+        if (data.success) {
+          showMessage('success', data.message);
+          // Redirect after successful registration
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1000);
+        } else {
+          showMessage('danger', data.message);
+        }
+      })
+      .catch(error => {
+        setButtonLoading(signupBtn, false);
+        showMessage('danger', 'An error occurred. Please try again.');
+        console.error('Error:', error);
+      });
+    });
+    
+    // Toggle password visibility
+    document.querySelectorAll('.password-toggle').forEach(button => {
+      button.addEventListener('click', function() {
+        const input = this.closest('.input-group').querySelector('input');
+        const icon = this.querySelector('i');
+        
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        } else {
+          input.type = 'password';
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      });
+    });
+    
+    // Password strength meter
+    document.getElementById('signupPassword').addEventListener('input', function() {
+      const password = this.value;
+      const strengthMeter = document.getElementById('password-strength-meter-bar');
+      const strengthText = document.getElementById('password-strength-text');
+      
+      // Reset the strength meter
+      strengthMeter.className = '';
+      strengthMeter.style.width = '0';
+      
+      if (password.length === 0) {
+        strengthText.textContent = 'Password strength: Not entered';
+        return;
+      }
+      
+      let strength = 0;
+      
+      // Check for length (at least 8 characters)
+      if (password.length >= 8) strength += 1;
+      
+      // Check for lowercase letters
+      if (/[a-z]/.test(password)) strength += 1;
+      
+      // Check for uppercase letters
+      if (/[A-Z]/.test(password)) strength += 1;
+      
+      // Check for numbers
+      if (/[0-9]/.test(password)) strength += 1;
+      
+      // Check for special characters
+      if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+      
+      // Update the strength meter
+      switch(strength) {
+        case 0:
+        case 1:
+          strengthMeter.style.width = '25%';
+          strengthMeter.style.backgroundColor = '#dc3545';
+          strengthText.textContent = 'Password strength: Weak';
+          break;
+        case 2:
+        case 3:
+          strengthMeter.style.width = '50%';
+          strengthMeter.style.backgroundColor = '#ffc107';
+          strengthText.textContent = 'Password strength: Medium';
+          break;
+        case 4:
+          strengthMeter.style.width = '75%';
+          strengthMeter.style.backgroundColor = '#17a2b8';
+          strengthText.textContent = 'Password strength: Strong';
+          break;
+        case 5:
+          strengthMeter.style.width = '100%';
+          strengthMeter.style.backgroundColor = '#28a745';
+          strengthText.textContent = 'Password strength: Very Strong';
+          break;
+      }
+    });
+    
+    // Check password confirmation
+    document.getElementById('confirmPassword').addEventListener('input', function() {
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = this.value;
+      
+      if (password !== confirmPassword) {
+        this.setCustomValidity('Passwords do not match');
+      } else {
+        this.setCustomValidity('');
+      }
+    });
+  </script>
+</body>
+</html> 

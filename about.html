@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Finance, Expense Tracker, Budget Management" />
+  <meta name="description" content="FinTrackr - Your personal finance tracking solution" />
+  <meta name="author" content="Soham Manjrekar" />
+  <title>FinTrackr - About Us</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.png">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4c5df1;
+      --primary-dark: #3a47cc;
+      --secondary-color: #45c7a7;
+      --secondary-dark: #36a88b;
+      --accent-color: #ff7246;
+      --light-bg: #f6f9ff;
+      --dark-text: #2b3054;
+      --medium-text: #4e5a8a;
+      --light-text: #8792af;
+    }
+    
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .content-wrapper {
+      flex: 1;
+    }
+    
+    .header_section {
+      background-color: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      padding: 70px 0;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 1;
+    }
+    
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .about-hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .about-section {
+      padding: 80px 0;
+      background-color: var(--light-bg);
+    }
+    
+    .about-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(76, 93, 241, 0.1);
+      padding: 40px;
+      margin-bottom: 30px;
+      border-top: 5px solid var(--primary-color);
+    }
+    
+    .about-card h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .about-card p {
+      color: var(--medium-text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .values-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
+      color: white;
+    }
+    
+    .values-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .values-heading h2 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .values-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    
+    .values-card:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+    
+    .values-card i {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .values-card h5 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .values-card p {
+      opacity: 0.9;
+    }
+    
+    @media (max-width: 992px) {
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .about-card {
+        padding: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .values-card {
+        margin-bottom: 20px;
+      }
+      
+      .about-section, .values-section {
+        padding: 60px 0;
+      }
+      
+      .about-card {
+        padding: 25px;
+        margin-bottom: 25px;
+      }
+      
+      .hero_area {
+        padding-bottom: 0;
+      }
+      
+      .quote_btn-container {
+        margin-top: 15px;
+      }
+      
+      .quote_btn-container a {
+        font-size: 13px;
+      }
+      
+      .quote_btn-container a img {
+        width: 18px;
+        margin-right: 5px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .about-hero {
+        padding: 50px 0;
+      }
+      
+      .about-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .about-section, .values-section {
+        padding: 40px 0;
+      }
+      
+      .about-card {
+        padding: 20px;
+      }
+      
+      .values-card {
+        padding: 20px;
+      }
+      
+      .values-card i {
+        font-size: 30px;
+      }
+      
+      .custom_nav-container .navbar-brand {
+        margin-right: 0;
+      }
+      
+      .info_section {
+        padding: 30px 0;
+      }
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+    .navbar-brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(76, 93, 241, 0.2);
+    }
+    
+    .navbar-brand span {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 1px 1px 2px rgba(76, 93, 241, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="FinTrackr Logo">
+            <span>FinTrackr</span>
+          </a>
+          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Application.html">Expense Tracker</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="authLink" href="Login.html">Login</a>
+                </li>
+              </ul>
+            </div>
+            <div class="quote_btn-container d-flex justify-content-center">
+              <a href="mailto:pdivy292@gmail.com">
+                <img src="images/envelope.png" alt="Email">
+                <span>pdivy292@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center about-hero-content">
+            <h1>About FinTrackr</h1>
+            <p>We're on a mission to simplify financial management and help people take control of their finances with powerful, intuitive tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-card">
+              <h2>Our Story</h2>
+              <p>FinTrackr was founded in 2023 with a simple goal: to make financial management accessible to everyone. We observed that many people struggle with tracking their daily expenses and maintaining budgets, which leads to financial stress and uncertainty.</p>
+              <p>Our team of finance experts and developers came together to build a solution that combines powerful tracking capabilities with an intuitive user interface. The result is FinTrackr – a comprehensive expense tracking platform that helps you manage your finances with ease.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-card">
+              <h2>Our Mission</h2>
+              <p>At FinTrackr, we believe that financial freedom starts with awareness. Our mission is to empower people to take control of their financial lives by providing them with the tools and insights they need to make informed decisions.</p>
+              <p>We strive to continually improve our platform, adding features that help our users save more, spend wisely, and build wealth over time. Our ultimate goal is to make financial management so simple and effective that it becomes a natural part of your daily routine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <div class="values-heading">
+          <h2>Our Core Values</h2>
+          <p>The principles that guide us in everything we do</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="values-card text-center">
+              <i class="fas fa-lock"></i>
+              <h5>Security First</h5>
+              <p>We prioritize the security and privacy of your financial data above everything else, implementing industry-leading protection measures.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="values-card text-center">
+              <i class="fas fa-lightbulb"></i>
+              <h5>Simplicity</h5>
+              <p>We believe that financial tools should be accessible to everyone, so we focus on creating intuitive interfaces that anyone can use.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="values-card text-center">
+              <i class="fas fa-chart-line"></i>
+              <h5>Continuous Improvement</h5>
+              <p>We constantly evolve our platform based on user feedback and emerging financial management best practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="info_section layout_padding">
+      <div class="container">
+        <div class="info_social">
+          <div>
+            <a href="#">
+              <img src="images/fb.png" alt="Facebook">
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="images/twitter.png" alt="Twitter">
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="images/insta.png" alt="Instagram">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2024 All Rights Reserved By
+      <a href="index.html">FinTrackr</a>
+    </p>
+  </section>
+  
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('check_auth.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.logged_in) {
+            // If logged in, update the auth link to "Logout"
+            const authLink = document.getElementById('authLink');
+            authLink.textContent = 'Logout';
+            authLink.href = 'logout.php';
+          }
+        })
+        .catch(error => {
+          console.error('Authentication check failed:', error);
+        });
+    });
+  </script>
+</body>
+</html>
